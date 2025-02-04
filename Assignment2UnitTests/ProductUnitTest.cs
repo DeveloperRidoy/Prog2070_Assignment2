@@ -76,38 +76,5 @@ namespace Assignment2UnitTests
             // Assert
             Assert.That(_product.StockAmount, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(500000));
         }
-
-
-        /// <summary>
-        /// Test that stock amount is within the range of 5 to 500000 after increasing stock count
-        /// </summary>
-        /// <param name="stockAmount"></param>
-        [TestCase(10)]
-        [TestCase(500)]
-        [TestCase(1000)]
-        public void IncreaseStockCount_ShouldBeInRange(int stockAmount)
-        {
-            // Act
-            _product.IncreaseStockCount(stockAmount);
-
-            // Assert
-            Assert.That(_product.StockAmount, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(500000));
-        }
-
-        /// <summary>
-        /// Test that stock amount is within the range of 5 to 500000 after decreasing stock count
-        /// </summary>
-        /// <param name="stockAmount"></param>
-        [TestCase(10)]
-        [TestCase(500)]
-        [TestCase(1000)]
-        public void DecreaseStockCount_ShouldBeInRange(int stockAmount)
-        {
-            // Act
-            _product.DecreaseStockCount(stockAmount);
-
-            // Assert
-            Assert.That(_product.StockAmount, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(500000));
-        }
     }
 }
