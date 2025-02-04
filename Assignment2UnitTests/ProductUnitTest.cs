@@ -76,6 +76,5 @@ namespace Assignment2UnitTests
             // Assert
             Assert.That(_product.StockAmount, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(500000));
         }
-
     }
 }
