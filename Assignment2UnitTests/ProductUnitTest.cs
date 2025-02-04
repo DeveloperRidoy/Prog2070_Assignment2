@@ -46,6 +46,39 @@ namespace Assignment2UnitTests
         }
 
         /// <summary>
+        /// Test that item price is within the range of 5 to 5000
+        /// </summary>
+        /// <param name="itemPrice"></param>
+        [TestCase(5)]
+        [TestCase(2500)]
+        [TestCase(5000)]
+        public void ItemPrice_ShouldBeInRange(double itemPrice)
+        {
+            // Act
+            _product.ItemPrice = itemPrice;
+
+            // Assert
+            Assert.That(_product.ItemPrice, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(5000));
+        }
+
+        /// <summary>
+        /// Test that stock amount is within the range of 5 to 500000
+        /// </summary>
+        /// <param name="stockAmount"></param>
+        [TestCase(5)]
+        [TestCase(250000)]
+        [TestCase(500000)]
+        public void StockAmount_ShouldBeInRange(int stockAmount)
+        {
+            // Act
+            _product.StockAmount = stockAmount;
+
+            // Assert
+            Assert.That(_product.StockAmount, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(500000));
+        }
+
+
+        /// <summary>
         /// Test that stock amount is within the range of 5 to 500000 after increasing stock count
         /// </summary>
         /// <param name="stockAmount"></param>
